@@ -74,7 +74,7 @@ class RendererTest extends \PHPUnit\Framework\TestCase
         $this->renderer->addPlugin($plugin);
         $this->renderer->addJob('id1', $job);
         $createdJobs = $this->callInternalMethodOfThing($this->renderer, 'createJobs');
-        $this->assertObjectHasAttribute('metadata', $createdJobs['id1']);
+        $this->assertObjectHasProperty('metadata', $createdJobs['id1']);
         $this->assertEquals('foo', $createdJobs['id1']->metadata['some_other']);
     }
 
